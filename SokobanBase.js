@@ -9,7 +9,7 @@ function update(){
 }
   
 function keyPress(e) {
-  	var x = e.keyCode;
+  	var x = e.key;
   	e.preventDefault();
   	var move = document.getElementById("character").getBoundingClientRect();
 	var walls = document.getElementsByClassName("Wall");
@@ -60,7 +60,7 @@ function keyPress(e) {
   	var top = parseInt(move.top,10)
   	
   switch (x) {
-    case 37:
+    case "ArrowLeft":
 		  //Left
 		  for(var i=0;i<walls.length;i++)
 			  {
@@ -114,7 +114,7 @@ function keyPress(e) {
      	place('character', left -50,  top);
       break;
 
-    case 39:
+    case "ArrowRight":
 		  for(var i=0;i<walls.length;i++)
 			  {
 				  	var wall1 = walls.item(i);
@@ -170,7 +170,7 @@ function keyPress(e) {
    place('character', left+50,  top);
       break;
 
-    case 38:
+    case "ArrowUp":
 		  for(var i=0;i<walls.length;i++)
 			  {
 				  var wall1 = walls.item(i);
@@ -226,7 +226,7 @@ function keyPress(e) {
     place('character', left,  top-50);
       break;
 
-    case 40:
+    case "ArrowDown":
 		  for(var i=0;i<walls.length;i++)
 			  {
 				  var wall1 = walls.item(i);
@@ -308,7 +308,8 @@ var Entities = {
     P = Player starting position
     G = Goal area for the blocks
 */
-var tileMap01 = {
+var tileMap01 = 
+{
 	width: 19,
 	height: 16,
 	mapGrid: [
@@ -329,4 +330,4 @@ var tileMap01 = {
 	  [[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],],
 	  [[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],[" "],],
   ],
-  };
+};
